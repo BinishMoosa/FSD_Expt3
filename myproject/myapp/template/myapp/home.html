@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ title }}</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #fce4ec, #ede7f6);
+            color: #4a3b5c;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 700px;
+            margin: 60px auto;
+            padding: 40px;
+            background-color: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(150, 100, 180, 0.15);
+            text-align: center;
+        }
+
+        h1 {
+            color: #9c5bb5;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 18px;
+        }
+
+        .logged-in {
+            color: #8e5aa8;
+            background-color: #f3e5f5;
+            padding: 12px;
+            border-radius: 10px;
+        }
+
+        .subjects {
+            text-align: left;
+            margin-top: 25px;
+        }
+
+        .subjects li {
+            list-style: none;
+            background-color: #fce4ec;
+            margin: 10px 0;
+            padding: 12px;
+            border-radius: 10px;
+            color: #7b4f8c;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>{{ heading }}</h1>
+
+        <p>Welcome, {{ name }}! 💜</p>
+
+        {% if is_logged_in %}
+            <p class="logged-in">You are logged in 🌸</p>
+        {% else %}
+            <p>You are not logged in.</p>
+        {% endif %}
+
+        <div class="subjects">
+            <h2>🌷 Subjects 🌷</h2>
+
+            <ul>
+                {% for subject in subjects %}
+                    <li>{{ subject }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+    </div>
+
+</body>
+</html>
